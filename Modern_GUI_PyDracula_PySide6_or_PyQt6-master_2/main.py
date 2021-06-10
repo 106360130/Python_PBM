@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
         # APP NAME
         # ///////////////////////////////////////////////////////////////
         title = "PyDracula - Modern GUI"
-        description = "PyDracula APP - Theme with colors based on Dracula for Python."
+        description = "Python Class - Recommendation System"
         # APPLY TEXTS
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
@@ -54,7 +54,7 @@ class MainWindow(QMainWindow):
         # TOGGLE MENU
         # ///////////////////////////////////////////////////////////////
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
-        widgets.radioButton.toggled.connect(lambda: UIFunctions.toggleRadioButton(self, True))
+#        widgets.radioButton.toggled.connect(lambda: UIFunctions.toggleRadioButton(self, True))  #widgets的GUI
 
         # SET UI DEFINITIONS
         # ///////////////////////////////////////////////////////////////
@@ -62,14 +62,14 @@ class MainWindow(QMainWindow):
 
         # QTableWidget PARAMETERS
         # ///////////////////////////////////////////////////////////////
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+#        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)  #widgets的GUI
 
         # BUTTONS CLICK
         # ///////////////////////////////////////////////////////////////
 
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
-        widgets.btn_widgets.clicked.connect(self.buttonClick)
+        #widgets.btn_widgets.clicked.connect(self.buttonClick)  #widgets的GUI
         widgets.btn_new.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
 
@@ -122,10 +122,12 @@ class MainWindow(QMainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW WIDGETS PAGE
+        """
         if btnName == "btn_widgets":
             widgets.stackedWidget.setCurrentWidget(widgets.widgets)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+        """
 
         # SHOW NEW PAGE
         if btnName == "btn_new":
