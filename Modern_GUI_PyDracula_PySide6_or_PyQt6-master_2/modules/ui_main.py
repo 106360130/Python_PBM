@@ -1600,7 +1600,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_NP = QVBoxLayout(self.new_page)
         self.verticalLayout_NP.setObjectName(u"verticalLayout_NP")
 
-
+        
         #設定row_NP
         self.row_NP = QFrame(self.new_page)
         self.row_NP.setObjectName(u"row_NP")
@@ -1630,22 +1630,112 @@ class Ui_MainWindow(object):
         #新增label_video
 
         #新增label_status
-        self.label_status = QLabel(self.row_NP)
+
+        #設定scrollArea_status
+        self.scrollArea_status = QScrollArea(self.row_NP)
+        self.scrollArea_status.setObjectName(u"scrollArea_status")
+        self.scrollArea_status.setStyleSheet(u" QScrollBar:vertical {\n"
+"    background: rgb(52, 59, 72);\n"
+" }\n"
+" QScrollBar:horizontal {\n"
+"    background: rgb(52, 59, 72);\n"
+" }")
+        self.scrollArea_status.setFrameShape(QFrame.NoFrame)
+        self.scrollArea_status.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.scrollArea_status.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.scrollArea_status.setWidgetResizable(True)
+        self.scrollArea_status.setStyleSheet(u" QScrollBar:vertical {\n"
+                                                "background: rgb(52, 59, 72);\n"  #scroll bar的背景顏色
+                                                "}\n"
+                                                " QScrollBar:horizontal {\n"
+                                                "    background: rgb(0, 0, 0);\n"
+                                                " }\n"
+                                                "QScrollArea{\n"  #QScrollArea的背景顏色
+                                                "background: rgb(33, 37, 43);"
+                                                "border-radius: 10px;\n"
+                                                "}\n"
+                                                )
+        #設定scrollArea_NP
+
+        #設定scrollArea_WidgetContents_status
+        self.scrollArea_WidgetContents_status = QWidget()
+        self.scrollArea_WidgetContents_status.setObjectName(u"scrollArea_WidgetContents_status")
+        self.scrollArea_WidgetContents_status.setGeometry(QRect(0, 0, 218, 218))
+        self.scrollArea_WidgetContents_status.setStyleSheet(u" QScrollBar:vertical {\n"
+"	border: none;\n"
+"    background: rgb(52, 59, 72);\n"
+"    width: 14px;\n"
+"    margin: 21px 0 21px 0;\n"
+"	border-radius: 0px;\n"
+" }")
+        #原本顏色為background: rgb(52, 59, 72)
+        #設定scrollArea_WidgetContents_status
+
+        self.horizontalLayout_status = QHBoxLayout(self.scrollArea_WidgetContents_status)
+        self.horizontalLayout_status.setObjectName(u"horizontalLayout_status")
+
+        self.label_status = QLabel(self.scrollArea_WidgetContents_status)
         self.label_status.setObjectName(u"label_video")
         self.label_status.setAlignment(Qt.AlignCenter)
+        self.label_status.setMinimumSize(QSize(700, 200))
         self.label_status.setText(QCoreApplication.translate("MainWindow", u"SHOW STATUS", None))
+        self.horizontalLayout_status.addWidget(self.label_status)
 
-        self.gridLayout_NP.addWidget(self.label_status, 2, 0, 1, 2)
+        self.scrollArea_status.setWidget(self.scrollArea_WidgetContents_status)
+
+        self.gridLayout_NP.addWidget(self.scrollArea_status, 2, 0, 1, 2)
         #新增label_status
 
-        #新增label_introduction
-        self.label_introduction = QLabel(self.row_NP)
-        self.label_introduction.setObjectName(u"label_video")
-        self.label_introduction.setAlignment(Qt.AlignCenter)
-        self.label_introduction.setText(QCoreApplication.translate("MainWindow", u"SHOW INTRODUCTION", None))
-        
-        self.gridLayout_NP.addWidget(self.label_introduction, 3, 0, 1, 2)
-        #新增label_introduction
+        #新增label_intro
+        #設定scrollArea_intro
+        self.scrollArea_intro = QScrollArea(self.row_NP)
+        self.scrollArea_intro.setObjectName(u"scrollArea_intro")
+        self.scrollArea_intro.setStyleSheet(u" QScrollBar:vertical {\n"
+                                                "background: rgb(52, 59, 72);\n"  #scroll bar的背景顏色
+                                                "}\n"
+                                                " QScrollBar:horizontal {\n"
+                                                "    background: rgb(0, 0, 0);\n"
+                                                " }\n"
+                                                "QScrollArea{\n"  #QScrollArea的背景顏色
+                                                "background: rgb(33, 37, 43);"
+                                                "border-radius: 10px;\n"
+                                                "}\n"
+                                                )
+
+        self.scrollArea_intro.setFrameShape(QFrame.NoFrame)
+        self.scrollArea_intro.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.scrollArea_intro.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.scrollArea_intro.setWidgetResizable(True)
+        #設定scrollArea_intro
+
+        #設定scrollArea_WidgetContents_intro
+        self.scrollArea_WidgetContents_intro = QWidget()
+        self.scrollArea_WidgetContents_intro.setObjectName(u"scrollArea_WidgetContents_intro")
+        self.scrollArea_WidgetContents_intro.setGeometry(QRect(0, 0, 218, 218))
+        self.scrollArea_WidgetContents_intro.setStyleSheet(u" QScrollBar:vertical {\n"
+                                                                "	border: none;\n"
+                                                                "    background: rgb(0, 0, 0);\n"
+                                                                "    width: 14px;\n"
+                                                                "    margin: 21px 0 21px 0;\n"
+                                                                "	border-radius: 0px;\n"
+                                                                " }")
+        #原本顏色為background: rgb(52, 59, 72)
+        #設定scrollArea_WidgetContents_intro
+
+        self.horizontalLayout_intro = QHBoxLayout(self.scrollArea_WidgetContents_intro)
+        self.horizontalLayout_intro.setObjectName(u"horizontalLayout_intro")
+
+
+        self.label_intro = QLabel(self.scrollArea_WidgetContents_intro)
+        self.label_intro.setObjectName(u"label_video")
+        self.label_intro.setAlignment(Qt.AlignCenter)
+        self.label_intro.setText(QCoreApplication.translate("MainWindow", u"SHOW INTRODUCTION", None))
+        self.label_intro.setMinimumSize(QSize(700, 200))
+        self.horizontalLayout_intro.addWidget(self.label_intro)
+
+        self.scrollArea_intro.setWidget(self.scrollArea_WidgetContents_intro)
+        self.gridLayout_NP.addWidget(self.scrollArea_intro, 3, 0, 1, 2)
+        #新增label_intro
 
         #新增tableWidget_NP
         self.tableWidget_NP = QTableWidget(self.row_home)  #表格
@@ -1729,6 +1819,7 @@ class Ui_MainWindow(object):
         self.tableWidget_NP.verticalHeader().setDefaultSectionSize(100)  #設定每個row的寬度
         self.tableWidget_NP.verticalHeader().setHighlightSections(False)
         self.tableWidget_NP.verticalHeader().setStretchLastSection(True)
+
         #設定tableWidget_NP
 
         self.gridLayout_NP.addWidget(self.tableWidget_NP, 0, 2, 4, 1)
@@ -1755,11 +1846,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_NP2.addLayout(self.gridLayout_NP)
         self.verticalLayout_NP.addWidget(self.row_NP)
-
+        
         #設定label
 
         self.stackedWidget.addWidget(self.new_page)
+        
         """
+        #row_NP2
         #設定row_NP2
         self.row_NP2 = QFrame(self.new_page)
         self.row_NP2.setObjectName(u"row_NP2")
@@ -1768,8 +1861,8 @@ class Ui_MainWindow(object):
         self.row_NP2.setFrameShadow(QFrame.Raised)
         #設定row_NP2
 
-        self.verticalLayout_NP = QVBoxLayout(self.row_NP2)
-        self.verticalLayout_NP.setObjectName(u"verticalLayout_NP")
+        self.verticalLayout_NP2 = QVBoxLayout(self.row_NP2)
+        self.verticalLayout_NP2.setObjectName(u"verticalLayout_NP2")
 
         self.gridLayout_NP = QGridLayout()
         self.gridLayout_NP.setObjectName(u"gridLayout_NP")
@@ -1845,23 +1938,25 @@ class Ui_MainWindow(object):
         self.horizontalLayout_NP.addWidget(self.label_NP)
         #label_NP
 
-        """
-        
-        """
-        self.plainTextEdit_NP = QPlainTextEdit(self.scrollArea_WidgetContents_NP)
-        self.plainTextEdit_NP.setObjectName(u"plainTextEdit_NP")
-        self.plainTextEdit_NP.setMinimumSize(QSize(200, 200))
-        self.plainTextEdit_NP.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-
-        self.horizontalLayout_NP.addWidget(self.plainTextEdit_NP)
-        """
-
-        """
         
 
         self.scrollArea_NP.setWidget(self.scrollArea_WidgetContents_NP)
 
         self.gridLayout_NP.addWidget(self.scrollArea_NP, 0, 5, 3, 1)
+        
+        # plainTextEdit_NP
+        # self.plainTextEdit_NP = QPlainTextEdit(self.scrollArea_WidgetContents_NP)
+        # self.plainTextEdit_NP.setObjectName(u"plainTextEdit_NP")
+        # self.plainTextEdit_NP.setMinimumSize(QSize(200, 200))
+        # self.plainTextEdit_NP.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        # self.horizontalLayout_NP.addWidget(self.plainTextEdit_NP)
+        # plainTextEdit_NP
+
+        
+        
+
+
 
         #comboBox_NP
         self.comboBox_NP = QComboBox(self.row_NP2)
@@ -1911,8 +2006,9 @@ class Ui_MainWindow(object):
         #horizontalSlider_NP
 
 
-        self.verticalLayout_NP.addLayout(self.gridLayout_NP)
-        self.verticalLayout_20.addWidget(self.row_NP2)
+        self.verticalLayout_NP2.addLayout(self.gridLayout_NP)
+        self.verticalLayout_NP.addWidget(self.row_NP2)
+        self.stackedWidget.addWidget(self.new_page)
         """
         #row_NP2
 
