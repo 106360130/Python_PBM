@@ -19,13 +19,11 @@ import os
 import platform
 
 # IMPORT / GUI AND MODULES AND WIDGETS
-# ///////////////////////////////////////////////////////////////
 from modules import *
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
-# ///////////////////////////////////////////////////////////////
 widgets = None
 
 class MainWindow(QMainWindow):
@@ -33,18 +31,15 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
 
         # SET AS GLOBAL WIDGETS
-        # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
-        # ///////////////////////////////////////////////////////////////
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
 
         # APP NAME
-        # ///////////////////////////////////////////////////////////////
         title = "PyDracula - Modern GUI"
         description = "Python Class - Recommendation System"
         # APPLY TEXTS
@@ -52,37 +47,19 @@ class MainWindow(QMainWindow):
         widgets.titleRightInfo.setText(description)
 
         # TOGGLE MENU
-        # ///////////////////////////////////////////////////////////////
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
-#        widgets.radioButton.toggled.connect(lambda: UIFunctions.toggleRadioButton(self, True))  #widgets的GUI
 
         # SET UI DEFINITIONS
-        # ///////////////////////////////////////////////////////////////
         UIFunctions.uiDefinitions(self)
 
-        # QTableWidget PARAMETERS
-        # ///////////////////////////////////////////////////////////////
-#        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)  #widgets的GUI
-
         # BUTTONS CLICK
-        # ///////////////////////////////////////////////////////////////
 
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
-        #widgets.btn_widgets.clicked.connect(self.buttonClick)  #widgets的GUI
         widgets.btn_new.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
+        widgets.btn_exit.clicked.connect(self.buttonClick)
 
-        # EXTRA LEFT BOX
-        #toggleLeftBox
-        """
-        def openCloseLeftBox():
-            UIFunctions.toggleLeftBox(self, True)
-
-        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
-        """
-        #toggleLeftBox
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():
@@ -90,11 +67,9 @@ class MainWindow(QMainWindow):
         widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
 
         # SHOW APP
-        # ///////////////////////////////////////////////////////////////
         self.show()
 
         # SET CUSTOM THEME
-        # ///////////////////////////////////////////////////////////////
         useCustomTheme = False
         themeFile = "themes\py_dracula_light.qss"
 
@@ -107,14 +82,12 @@ class MainWindow(QMainWindow):
             AppFunctions.setThemeHack(self)
 
         # SET HOME PAGE AND SELECT MENU
-        # ///////////////////////////////////////////////////////////////
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
 
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
-    # ///////////////////////////////////////////////////////////////
     def buttonClick(self):
         # GET BUTTON CLICKED
         btn = self.sender()
@@ -126,14 +99,6 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        # SHOW WIDGETS PAGE
-        """
-        if btnName == "btn_widgets":
-            widgets.stackedWidget.setCurrentWidget(widgets.widgets)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-        """
-
         # SHOW NEW PAGE
         if btnName == "btn_new":
             widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
@@ -143,18 +108,19 @@ class MainWindow(QMainWindow):
         if btnName == "btn_save":
             print("Save BTN clicked!")
 
+        if btnName == "btn_exit":
+             print("Exit BTN clicked!")
+
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
 
 
     # RESIZE EVENTS
-    # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):
         # Update Size Grips
         UIFunctions.resize_grips(self)
 
     # MOUSE CLICK EVENTS
-    # ///////////////////////////////////////////////////////////////
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
         self.dragPos = event.globalPos()

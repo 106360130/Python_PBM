@@ -187,7 +187,7 @@ class UIFunctions(MainWindow):
         self.group.start()
 
     # SELECT/DESELECT MENU
-    # ///////////////////////////////////////////////////////////////
+
     # SELECT
     def selectMenu(getStyle):
         select = getStyle + Settings.MENU_SELECTED_STYLESHEET
@@ -211,14 +211,12 @@ class UIFunctions(MainWindow):
                 w.setStyleSheet(UIFunctions.deselectMenu(w.styleSheet()))
 
     # IMPORT THEMES FILES QSS/CSS
-    # ///////////////////////////////////////////////////////////////
     def theme(self, file, useCustomTheme):
         if useCustomTheme:
             str = open(file, 'r').read()
             self.ui.styleSheet.setStyleSheet(str)
 
     # START - GUI DEFINITIONS
-    # ///////////////////////////////////////////////////////////////
     def uiDefinitions(self):
         def dobleClickMaximizeRestore(event):
             # IF DOUBLE CLICK CHANGE STATUS
@@ -284,5 +282,4 @@ class UIFunctions(MainWindow):
             self.top_grip.setGeometry(0, 0, self.width(), 10)
             self.bottom_grip.setGeometry(0, self.height() - 10, self.width(), 10)
 
-    # ///////////////////////////////////////////////////////////////
     # END - GUI DEFINITIONS
