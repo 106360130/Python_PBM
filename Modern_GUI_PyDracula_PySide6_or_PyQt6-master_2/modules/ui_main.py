@@ -614,6 +614,8 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addWidget(self.topLogoInfo)
 
+        #leftMenuFrame
+        
         self.leftMenuFrame = QFrame(self.leftMenuBg)
         self.leftMenuFrame.setObjectName(u"leftMenuFrame")
         self.leftMenuFrame.setFrameShape(QFrame.NoFrame)
@@ -623,6 +625,7 @@ class Ui_MainWindow(object):
         self.verticalMenuLayout.setObjectName(u"verticalMenuLayout")
         self.verticalMenuLayout.setContentsMargins(0, 0, 0, 0)
         self.toggleBox = QFrame(self.leftMenuFrame)
+
         self.toggleBox.setObjectName(u"toggleBox")
         self.toggleBox.setMaximumSize(QSize(16777215, 45))
         self.toggleBox.setFrameShape(QFrame.NoFrame)
@@ -648,6 +651,8 @@ class Ui_MainWindow(object):
 
 
         self.verticalMenuLayout.addWidget(self.toggleBox)
+        
+        #leftMenuFrame
 
         self.topMenu = QFrame(self.leftMenuFrame)
         self.topMenu.setObjectName(u"topMenu")
@@ -657,6 +662,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        
+        
+
+        #widgets的GUI
         self.btn_home = QPushButton(self.topMenu)
         self.btn_home.setObjectName(u"btn_home")
         sizePolicy.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
@@ -668,6 +677,7 @@ class Ui_MainWindow(object):
         self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
 
         self.verticalLayout_8.addWidget(self.btn_home)
+        #widgets的GUI
 
         #widgets的GUI
         """
@@ -732,6 +742,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+
+        #toggleLeftBox
+        """
         self.toggleLeftBox = QPushButton(self.bottomMenu)
         self.toggleLeftBox.setObjectName(u"toggleLeftBox")
         sizePolicy.setHeightForWidth(self.toggleLeftBox.sizePolicy().hasHeightForWidth())
@@ -743,6 +756,8 @@ class Ui_MainWindow(object):
         self.toggleLeftBox.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_settings.png);")
 
         self.verticalLayout_9.addWidget(self.toggleLeftBox)
+        """
+        #toggleLeftBox
 
 
         self.verticalMenuLayout.addWidget(self.bottomMenu, 0, Qt.AlignBottom)
@@ -1655,7 +1670,7 @@ class Ui_MainWindow(object):
                                                 "background: rgb(52, 59, 72);\n"  #scroll bar的背景顏色
                                                 "}\n"
                                                 " QScrollBar:horizontal {\n"
-                                                "    background: rgb(0, 0, 0);\n"
+                                                "    background: rgb(52, 59, 72);\n"
                                                 " }\n"
                                                 "QScrollArea{\n"  #QScrollArea的背景顏色
                                                 "background: rgb(33, 37, 43);"
@@ -1701,7 +1716,7 @@ class Ui_MainWindow(object):
                                                 "background: rgb(52, 59, 72);\n"  #scroll bar的背景顏色
                                                 "}\n"
                                                 " QScrollBar:horizontal {\n"
-                                                "    background: rgb(0, 0, 0);\n"
+                                                "    background: rgb(52, 59, 72);\n"
                                                 " }\n"
                                                 "QScrollArea{\n"  #QScrollArea的背景顏色
                                                 "background: rgb(33, 37, 43);"
@@ -1901,6 +1916,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+
+        """
         self.btn_message = QPushButton(self.topMenus)
         self.btn_message.setObjectName(u"btn_message")
         sizePolicy.setHeightForWidth(self.btn_message.sizePolicy().hasHeightForWidth())
@@ -1912,7 +1929,9 @@ class Ui_MainWindow(object):
         self.btn_message.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-envelope-open.png);")
 
         self.verticalLayout_14.addWidget(self.btn_message)
-
+        """
+        
+        """
         self.btn_print = QPushButton(self.topMenus)
         self.btn_print.setObjectName(u"btn_print")
         sizePolicy.setHeightForWidth(self.btn_print.sizePolicy().hasHeightForWidth())
@@ -1924,6 +1943,7 @@ class Ui_MainWindow(object):
         self.btn_print.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-print.png);")
 
         self.verticalLayout_14.addWidget(self.btn_print)
+        """
 
         self.btn_logout = QPushButton(self.topMenus)
         self.btn_logout.setObjectName(u"btn_logout")
@@ -2011,14 +2031,14 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PPS", None))
-        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Still co0l~", None))
+        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Still cool~", None))
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         #self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))  #widgets的GUI
         self.btn_new.setText(QCoreApplication.translate("MainWindow", u"New", None))
         self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
-        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
+#        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))  #toggleLeftBox
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
 #if QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
@@ -2127,10 +2147,10 @@ class Ui_MainWindow(object):
         #widgets的GUI
 
         
-        self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
-        self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
+#        self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
+#        self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
-        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Wanderson M. Pimenta", None))
+        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Jeff", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
     # retranslateUi
 
