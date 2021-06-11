@@ -723,6 +723,7 @@ class Ui_MainWindow(object):
 
         #btn
         """
+        #測試用class包裝
         self.btn_test = TestButton(self.topMenu)
         self.verticalLayout_8.addWidget(self.btn_test)
 
@@ -733,7 +734,6 @@ class Ui_MainWindow(object):
 
         #btn_home
         #self.btn_home = TestButton(self.topMenu)
-
         self.btn_home = QPushButton(self.topMenu)
         self.btn_home.setObjectName(u"btn_home")
         sizePolicy.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
@@ -742,14 +742,12 @@ class Ui_MainWindow(object):
         self.btn_home.setFont(font)
         self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_home.setLayoutDirection(Qt.LeftToRight)
-        
         self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
         
-
         self.verticalLayout_8.addWidget(self.btn_home)
         #btn_home
         
-        #menu的GUI
+        
 
 
         #btn_new
@@ -793,18 +791,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.btn_exit)
         #btn_exit
+        #menu的GUI
         #btn
-
-
+        
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
-
-
 
 
         self.bottomMenu = QFrame(self.leftMenuFrame)
         self.bottomMenu.setObjectName(u"bottomMenu")
         self.bottomMenu.setFrameShape(QFrame.NoFrame)
         self.bottomMenu.setFrameShadow(QFrame.Raised)
+
         self.verticalLayout_9 = QVBoxLayout(self.bottomMenu)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
@@ -812,174 +809,57 @@ class Ui_MainWindow(object):
 
 
         self.verticalMenuLayout.addWidget(self.bottomMenu, 0, Qt.AlignBottom)
-        
-
-
 
          
         self.verticalLayout_3.addWidget(self.leftMenuFrame)
-        
-
 
         self.appLayout.addWidget(self.leftMenuBg)
 
-        #extraLeftBox
-        self.extraLeftBox = QFrame(self.bgApp)
-        self.extraLeftBox.setObjectName(u"extraLeftBox")
-        self.extraLeftBox.setMinimumSize(QSize(0, 0))
-        self.extraLeftBox.setMaximumSize(QSize(0, 16777215))
-        self.extraLeftBox.setFrameShape(QFrame.NoFrame)
-        self.extraLeftBox.setFrameShadow(QFrame.Raised)
-        #extraLeftBox
 
-
-        #extraColumLayout
-        
-        self.extraColumLayout = QVBoxLayout(self.extraLeftBox)
-        self.extraColumLayout.setSpacing(0)
-        self.extraColumLayout.setObjectName(u"extraColumLayout")
-        self.extraColumLayout.setContentsMargins(0, 0, 0, 0)
-        
-        #extraColumLayout
-
-        #extraTopBg
-        
-        self.extraTopBg = QFrame(self.extraLeftBox)
-        self.extraTopBg.setObjectName(u"extraTopBg")
-        self.extraTopBg.setMinimumSize(QSize(0, 50))
-        self.extraTopBg.setMaximumSize(QSize(16777215, 50))
-        self.extraTopBg.setFrameShape(QFrame.NoFrame)
-        self.extraTopBg.setFrameShadow(QFrame.Raised)
-        
-        #extraTopBg
-
-        #verticalLayout_5
-        
-        self.verticalLayout_5 = QVBoxLayout(self.extraTopBg)
-        self.verticalLayout_5.setSpacing(0)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        
-        #verticalLayout_5
-
-        #extraTopLayout
-        self.extraTopLayout = QGridLayout()
-        self.extraTopLayout.setObjectName(u"extraTopLayout")
-        self.extraTopLayout.setHorizontalSpacing(10)
-        self.extraTopLayout.setVerticalSpacing(0)
-        self.extraTopLayout.setContentsMargins(10, -1, 10, -1)
-        #extraTopLayout
-
-        #extraCloseColumnBtn
-        self.extraCloseColumnBtn = QPushButton(self.extraTopBg)
-        self.extraCloseColumnBtn.setObjectName(u"extraCloseColumnBtn")
-        self.extraCloseColumnBtn.setMinimumSize(QSize(28, 28))
-        self.extraCloseColumnBtn.setMaximumSize(QSize(28, 28))
-        self.extraCloseColumnBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        #icon
         icon = QIcon()
         icon.addFile(u":/icons/images/icons/icon_close.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.extraCloseColumnBtn.setIcon(icon)
-        self.extraCloseColumnBtn.setIconSize(QSize(20, 20))
+        #icon
 
-        self.extraTopLayout.addWidget(self.extraCloseColumnBtn, 0, 2, 1, 1)
-        self.verticalLayout_5.addLayout(self.extraTopLayout)
-        
-        #extraCloseColumnBtn
-
-
-    #    self.extraColumLayout.addWidget(self.extraTopBg)
-
-        #extraContent
-        
-        self.extraContent = QFrame(self.extraLeftBox)
-        self.extraContent.setObjectName(u"extraContent")
-        self.extraContent.setFrameShape(QFrame.NoFrame)
-        self.extraContent.setFrameShadow(QFrame.Raised)
-        
-        #extraContent
-
-        #verticalLayout_12
-        
-        self.verticalLayout_12 = QVBoxLayout(self.extraContent)
-        self.verticalLayout_12.setSpacing(0)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        
-        #verticalLayout_12
-
-        #self.verticalLayout_12.addWidget(self.extraTopMenu, 0, Qt.AlignTop)
-
-        #extraCenter
-        
-        self.extraCenter = QFrame(self.extraContent)
-        self.extraCenter.setObjectName(u"extraCenter")
-        self.extraCenter.setFrameShape(QFrame.NoFrame)
-        self.extraCenter.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_10 = QVBoxLayout(self.extraCenter)
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        
-        #extraCenter
-
-        #textEdit
-        
-        self.textEdit = QTextEdit(self.extraCenter)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setMinimumSize(QSize(222, 0))
-        self.textEdit.setStyleSheet(u"background: transparent;")
-        self.textEdit.setFrameShape(QFrame.NoFrame)
-        self.textEdit.setReadOnly(True)
-
-        self.verticalLayout_10.addWidget(self.textEdit)
-        
-        #textEdit
-
-
-        self.verticalLayout_12.addWidget(self.extraCenter)
-
-        self.extraBottom = QFrame(self.extraContent)
-        self.extraBottom.setObjectName(u"extraBottom")
-        self.extraBottom.setFrameShape(QFrame.NoFrame)
-        self.extraBottom.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_12.addWidget(self.extraBottom)
-
-
-        self.extraColumLayout.addWidget(self.extraContent)
-
-
-        self.appLayout.addWidget(self.extraLeftBox)
 
         self.contentBox = QFrame(self.bgApp)
         self.contentBox.setObjectName(u"contentBox")
         self.contentBox.setFrameShape(QFrame.NoFrame)
         self.contentBox.setFrameShadow(QFrame.Raised)
+
         self.verticalLayout_2 = QVBoxLayout(self.contentBox)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+
         self.contentTopBg = QFrame(self.contentBox)
         self.contentTopBg.setObjectName(u"contentTopBg")
         self.contentTopBg.setMinimumSize(QSize(0, 50))
         self.contentTopBg.setMaximumSize(QSize(16777215, 50))
         self.contentTopBg.setFrameShape(QFrame.NoFrame)
         self.contentTopBg.setFrameShadow(QFrame.Raised)
+
         self.horizontalLayout = QHBoxLayout(self.contentTopBg)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 10, 0)
+
         self.leftBox = QFrame(self.contentTopBg)
         self.leftBox.setObjectName(u"leftBox")
         sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.leftBox.sizePolicy().hasHeightForWidth())
+
         self.leftBox.setSizePolicy(sizePolicy1)
         self.leftBox.setFrameShape(QFrame.NoFrame)
         self.leftBox.setFrameShadow(QFrame.Raised)
+
         self.horizontalLayout_3 = QHBoxLayout(self.leftBox)
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+
         self.titleRightInfo = QLabel(self.leftBox)
         self.titleRightInfo.setObjectName(u"titleRightInfo")
         sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
@@ -1001,10 +881,12 @@ class Ui_MainWindow(object):
         self.rightButtons.setMinimumSize(QSize(0, 28))
         self.rightButtons.setFrameShape(QFrame.NoFrame)
         self.rightButtons.setFrameShadow(QFrame.Raised)
+
         self.horizontalLayout_2 = QHBoxLayout(self.rightButtons)
         self.horizontalLayout_2.setSpacing(5)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        
         self.settingsTopBtn = QPushButton(self.rightButtons)
         self.settingsTopBtn.setObjectName(u"settingsTopBtn")
         self.settingsTopBtn.setMinimumSize(QSize(28, 28))
@@ -1064,34 +946,54 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.contentTopBg)
 
+        #contentBottom
         self.contentBottom = QFrame(self.contentBox)
         self.contentBottom.setObjectName(u"contentBottom")
         self.contentBottom.setFrameShape(QFrame.NoFrame)
         self.contentBottom.setFrameShadow(QFrame.Raised)
+        #contentBottom
+
+        #verticalLayout_6
         self.verticalLayout_6 = QVBoxLayout(self.contentBottom)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        #verticalLayout_6
+
+        #content
         self.content = QFrame(self.contentBottom)
         self.content.setObjectName(u"content")
         self.content.setFrameShape(QFrame.NoFrame)
         self.content.setFrameShadow(QFrame.Raised)
+        #content
+
+        #horizontalLayout_4
         self.horizontalLayout_4 = QHBoxLayout(self.content)
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        #horizontalLayout_4
+
+        #pagesContainer
         self.pagesContainer = QFrame(self.content)
         self.pagesContainer.setObjectName(u"pagesContainer")
         self.pagesContainer.setStyleSheet(u"")
         self.pagesContainer.setFrameShape(QFrame.NoFrame)
         self.pagesContainer.setFrameShadow(QFrame.Raised)
+        #pagesContainer
+
+        #verticalLayout_15
         self.verticalLayout_15 = QVBoxLayout(self.pagesContainer)
         self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(10, 10, 10, 10)
+        #verticalLayout_15
+
+        #stackedWidget
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")
+        #stackedWidget
 
         #home的GUI
         self.home = QWidget()
@@ -1553,16 +1455,23 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.pagesContainer)
 
+        #extraRightBox
         self.extraRightBox = QFrame(self.content)
         self.extraRightBox.setObjectName(u"extraRightBox")
         self.extraRightBox.setMinimumSize(QSize(0, 0))
         self.extraRightBox.setMaximumSize(QSize(0, 16777215))
         self.extraRightBox.setFrameShape(QFrame.NoFrame)
         self.extraRightBox.setFrameShadow(QFrame.Raised)
+        #extraRightBox
+
+        #verticalLayout_7
         self.verticalLayout_7 = QVBoxLayout(self.extraRightBox)
         self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        #verticalLayout_7
+
+        #themeSettingsTopDetail
         self.themeSettingsTopDetail = QFrame(self.extraRightBox)
         self.themeSettingsTopDetail.setObjectName(u"themeSettingsTopDetail")
         self.themeSettingsTopDetail.setMaximumSize(QSize(16777215, 3))
@@ -1570,24 +1479,37 @@ class Ui_MainWindow(object):
         self.themeSettingsTopDetail.setFrameShadow(QFrame.Raised)
 
         self.verticalLayout_7.addWidget(self.themeSettingsTopDetail)
+        #themeSettingsTopDetail
 
+        #contentSettings
         self.contentSettings = QFrame(self.extraRightBox)
         self.contentSettings.setObjectName(u"contentSettings")
         self.contentSettings.setFrameShape(QFrame.NoFrame)
         self.contentSettings.setFrameShadow(QFrame.Raised)
+        #contentSettings
+
+        #verticalLayout_13
         self.verticalLayout_13 = QVBoxLayout(self.contentSettings)
         self.verticalLayout_13.setSpacing(0)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        #verticalLayout_13
+
+        #topMenus
         self.topMenus = QFrame(self.contentSettings)
         self.topMenus.setObjectName(u"topMenus")
         self.topMenus.setFrameShape(QFrame.NoFrame)
         self.topMenus.setFrameShadow(QFrame.Raised)
+        #topMenus
+
+        #verticalLayout_14
         self.verticalLayout_14 = QVBoxLayout(self.topMenus)
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        #verticalLayout_14
 
+        #btn_logout
         self.btn_logout = QPushButton(self.topMenus)
         self.btn_logout.setObjectName(u"btn_logout")
         sizePolicy.setHeightForWidth(self.btn_logout.sizePolicy().hasHeightForWidth())
@@ -1599,7 +1521,7 @@ class Ui_MainWindow(object):
         self.btn_logout.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-account-logout.png);")
 
         self.verticalLayout_14.addWidget(self.btn_logout)
-
+        #btn_logout
 
         self.verticalLayout_13.addWidget(self.topMenus, 0, Qt.AlignTop)
 
@@ -1685,9 +1607,9 @@ class Ui_MainWindow(object):
 #        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))  #toggleLeftBox
 #        self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
 #if QT_CONFIG(tooltip)
-        self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
+        #self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
 #endif // QT_CONFIG(tooltip)
-        self.extraCloseColumnBtn.setText("")
+        #self.extraCloseColumnBtn.setText("")
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
 #endif // QT_CONFIG(tooltip)
         self.settingsTopBtn.setText("")
