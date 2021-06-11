@@ -29,6 +29,7 @@ widgets = None
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
+        #self = QMainWindow
 
         # SET AS GLOBAL WIDGETS
         self.ui = Ui_MainWindow()

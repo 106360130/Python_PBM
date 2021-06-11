@@ -13,24 +13,32 @@ from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
 from . resources_rc import *
+from modules.TestButton import TestButton
 
 #from modules.ui_functions import UIFunctions
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+
+        #第一區塊
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
 
         MainWindow.resize(1280, 720)
         MainWindow.setMinimumSize(QSize(940, 560))
+
+        #設定APP風格
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
+
+        #font  //設定字形
         font = QFont()
         font.setFamily(u"Segoe UI")
         font.setPointSize(10)
         font.setBold(False)
         font.setItalic(False)
+        #font  //設定字形
+
         self.styleSheet.setFont(font)
         self.styleSheet.setStyleSheet(u"/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "\n"
@@ -552,38 +560,57 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
+        
+        #設定APP風格
 
-        #self.ui_function = UIFunctions(MainWindow)
-
+        #appMargins
         self.appMargins = QVBoxLayout(self.styleSheet)
         self.appMargins.setSpacing(0)
         self.appMargins.setObjectName(u"appMargins")
         self.appMargins.setContentsMargins(10, 10, 10, 10)
+        #appMargins
+
+        #bgApp
         self.bgApp = QFrame(self.styleSheet)
         self.bgApp.setObjectName(u"bgApp")
         self.bgApp.setStyleSheet(u"")
         self.bgApp.setFrameShape(QFrame.NoFrame)
         self.bgApp.setFrameShadow(QFrame.Raised)
+        #bgApp
+
+        #appLayout
         self.appLayout = QHBoxLayout(self.bgApp)
         self.appLayout.setSpacing(0)
         self.appLayout.setObjectName(u"appLayout")
         self.appLayout.setContentsMargins(0, 0, 0, 0)
+        #appLayout
+
+        #leftMenuBg
         self.leftMenuBg = QFrame(self.bgApp)
         self.leftMenuBg.setObjectName(u"leftMenuBg")
         self.leftMenuBg.setMinimumSize(QSize(60, 0))
         self.leftMenuBg.setMaximumSize(QSize(60, 16777215))
         self.leftMenuBg.setFrameShape(QFrame.NoFrame)
         self.leftMenuBg.setFrameShadow(QFrame.Raised)
+        #leftMenuBg
+
+        #verticalLayout_3
         self.verticalLayout_3 = QVBoxLayout(self.leftMenuBg)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        #verticalLayout_3
+
+        #topLogoInfo
         self.topLogoInfo = QFrame(self.leftMenuBg)
         self.topLogoInfo.setObjectName(u"topLogoInfo")
         self.topLogoInfo.setMinimumSize(QSize(0, 50))
         self.topLogoInfo.setMaximumSize(QSize(16777215, 50))
         self.topLogoInfo.setFrameShape(QFrame.NoFrame)
         self.topLogoInfo.setFrameShadow(QFrame.Raised)
+        #topLogoInfo
+
+        #topLogo
         self.topLogo = QFrame(self.topLogoInfo)
         self.topLogo.setObjectName(u"topLogo")
         self.topLogo.setGeometry(QRect(10, 5, 42, 42))
@@ -591,52 +618,71 @@ class Ui_MainWindow(object):
         self.topLogo.setMaximumSize(QSize(42, 42))
         self.topLogo.setFrameShape(QFrame.NoFrame)
         self.topLogo.setFrameShadow(QFrame.Raised)
+        #topLogo
+
+        #titleLeftApp
         self.titleLeftApp = QLabel(self.topLogoInfo)
         self.titleLeftApp.setObjectName(u"titleLeftApp")
         self.titleLeftApp.setGeometry(QRect(70, 8, 160, 20))
+        #titleLeftApp
+
+        #font1
         font1 = QFont()
         font1.setFamily(u"Segoe UI Semibold")
         font1.setPointSize(12)
         font1.setBold(False)
         font1.setItalic(False)
+        #font1
+
         self.titleLeftApp.setFont(font1)
         self.titleLeftApp.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.titleLeftDescription = QLabel(self.topLogoInfo)
         self.titleLeftDescription.setObjectName(u"titleLeftDescription")
         self.titleLeftDescription.setGeometry(QRect(70, 27, 160, 16))
         self.titleLeftDescription.setMaximumSize(QSize(16777215, 16))
+
+        #font2
         font2 = QFont()
         font2.setFamily(u"Segoe UI")
         font2.setPointSize(8)
         font2.setBold(False)
         font2.setItalic(False)
+        #font2
+
+
         self.titleLeftDescription.setFont(font2)
         self.titleLeftDescription.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
         self.verticalLayout_3.addWidget(self.topLogoInfo)
 
         #leftMenuFrame
-        
         self.leftMenuFrame = QFrame(self.leftMenuBg)
         self.leftMenuFrame.setObjectName(u"leftMenuFrame")
         self.leftMenuFrame.setFrameShape(QFrame.NoFrame)
         self.leftMenuFrame.setFrameShadow(QFrame.Raised)
+        #leftMenuFrame
+
+        #verticalMenuLayout
         self.verticalMenuLayout = QVBoxLayout(self.leftMenuFrame)
         self.verticalMenuLayout.setSpacing(0)
         self.verticalMenuLayout.setObjectName(u"verticalMenuLayout")
         self.verticalMenuLayout.setContentsMargins(0, 0, 0, 0)
+        #verticalMenuLayout
 
-
+        #toggleBox
         self.toggleBox = QFrame(self.leftMenuFrame)
-
         self.toggleBox.setObjectName(u"toggleBox")
         self.toggleBox.setMaximumSize(QSize(16777215, 45))
         self.toggleBox.setFrameShape(QFrame.NoFrame)
         self.toggleBox.setFrameShadow(QFrame.Raised)
+        #toggleBox
+
+        #verticalLayout_4
         self.verticalLayout_4 = QVBoxLayout(self.toggleBox)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        #verticalLayout_4
 
         #三條槓
         self.toggleButton = QPushButton(self.toggleBox)
@@ -657,13 +703,15 @@ class Ui_MainWindow(object):
 
 
         self.verticalMenuLayout.addWidget(self.toggleBox)
-        
-        #leftMenuFrame
 
+
+
+        #leftMenuFrame
         self.topMenu = QFrame(self.leftMenuFrame)
         self.topMenu.setObjectName(u"topMenu")
         self.topMenu.setFrameShape(QFrame.NoFrame)
         self.topMenu.setFrameShadow(QFrame.Raised)
+
         self.verticalLayout_8 = QVBoxLayout(self.topMenu)
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
@@ -672,6 +720,20 @@ class Ui_MainWindow(object):
         
 
         #menu的GUI
+
+        #btn
+        """
+        self.btn_test = TestButton(self.topMenu)
+        self.verticalLayout_8.addWidget(self.btn_test)
+
+
+        self.btn_test3 = QPushButton(self.topMenu)
+        self.verticalLayout_8.addWidget(self.btn_test3)
+        """
+
+        #btn_home
+        #self.btn_home = TestButton(self.topMenu)
+
         self.btn_home = QPushButton(self.topMenu)
         self.btn_home.setObjectName(u"btn_home")
         sizePolicy.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
@@ -680,13 +742,17 @@ class Ui_MainWindow(object):
         self.btn_home.setFont(font)
         self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_home.setLayoutDirection(Qt.LeftToRight)
+        
         self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
+        
 
         self.verticalLayout_8.addWidget(self.btn_home)
+        #btn_home
+        
         #menu的GUI
 
 
-
+        #btn_new
         self.btn_new = QPushButton(self.topMenu)
         self.btn_new.setObjectName(u"btn_new")
         sizePolicy.setHeightForWidth(self.btn_new.sizePolicy().hasHeightForWidth())
@@ -698,6 +764,7 @@ class Ui_MainWindow(object):
         self.btn_new.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-file.png);")
 
         self.verticalLayout_8.addWidget(self.btn_new)
+        #btn_new
 
         #btn_save
         self.btn_save = QPushButton(self.topMenu)
@@ -713,7 +780,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.addWidget(self.btn_save)
         #btn_save
 
-        
         #btn_exit
         self.btn_exit = QPushButton(self.topMenu)
         self.btn_exit.setObjectName(u"btn_exit")
@@ -727,9 +793,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.btn_exit)
         #btn_exit
+        #btn
 
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
+
+
+
 
         self.bottomMenu = QFrame(self.leftMenuFrame)
         self.bottomMenu.setObjectName(u"bottomMenu")
@@ -742,22 +812,24 @@ class Ui_MainWindow(object):
 
 
         self.verticalMenuLayout.addWidget(self.bottomMenu, 0, Qt.AlignBottom)
+        
 
 
+
+         
         self.verticalLayout_3.addWidget(self.leftMenuFrame)
+        
 
 
         self.appLayout.addWidget(self.leftMenuBg)
 
         #extraLeftBox
-        
         self.extraLeftBox = QFrame(self.bgApp)
         self.extraLeftBox.setObjectName(u"extraLeftBox")
         self.extraLeftBox.setMinimumSize(QSize(0, 0))
         self.extraLeftBox.setMaximumSize(QSize(0, 16777215))
         self.extraLeftBox.setFrameShape(QFrame.NoFrame)
         self.extraLeftBox.setFrameShadow(QFrame.Raised)
-        
         #extraLeftBox
 
 
@@ -1585,6 +1657,7 @@ class Ui_MainWindow(object):
 
 
         self.appLayout.addWidget(self.contentBox)
+
 
 
         self.appMargins.addWidget(self.bgApp)
